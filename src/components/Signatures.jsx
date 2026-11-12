@@ -12,23 +12,23 @@ export default function Signatures() {
           <div>
             <div className="flex items-center gap-2 text-ember-400 text-xs font-bold uppercase tracking-widest mb-2">
               <Flame className="w-4 h-4 fill-ember-500" />
-              <span>Especialidades de la Casa</span>
+              <span>Nuestras Especialidades</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl font-bold text-cream-100 tracking-tight">
               Los platos por los que siempre vuelves.
             </h2>
           </div>
           <p className="text-cream-400 text-sm sm:text-base max-w-md">
-            Preparados al instante al calor del fogón tradicional, respetando los tiempos y adobos de nuestra herencia nariñense.
+            Cocinados con ingredientes frescos a fuego lento y con el sazón de la abuela. Transparencia y calidad en Catambuco.
           </p>
         </div>
 
         {/* Dishes Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SIGNATURE_DISHES.map((dish) => (
             <div 
               key={dish.id}
-              className="group bg-ember-900/40 rounded-2xl border border-ember-800/40 overflow-hidden hover:border-ember-600/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-glow flex flex-col justify-between"
+              className="group bg-ember-900/30 rounded-3xl border border-ember-800/40 overflow-hidden hover:border-ember-600/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-glow flex flex-col justify-between"
             >
               {/* Image & Badges */}
               <div className="relative aspect-[4/3] overflow-hidden bg-ember-950">
@@ -48,21 +48,26 @@ export default function Signatures() {
                 </div>
 
                 {/* Price Pill */}
-                <div className="absolute bottom-3 right-3 bg-ember-950/90 border border-ember-700/60 px-3 py-1 rounded-lg">
+                <div className="absolute bottom-3 right-3 bg-ember-950/90 border border-ember-700/60 px-3 py-1.5 rounded-xl flex flex-col items-end">
                   <span className="font-bold text-gold-400 text-sm">
                     {dish.price}
                   </span>
+                  {dish.takeawayPrice && (
+                    <span className="text-[10px] text-cream-400 font-medium">
+                      {dish.takeawayPrice}
+                    </span>
+                  )}
                 </div>
               </div>
 
               {/* Content Body */}
-              <div className="p-5 flex-1 flex flex-col justify-between">
+              <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
                   <h3 className="font-serif font-bold text-xl text-cream-100 group-hover:text-ember-400 transition-colors">
                     {dish.title}
                   </h3>
 
-                  <p className="mt-2 text-xs sm:text-sm text-cream-400 leading-relaxed line-clamp-3">
+                  <p className="mt-2.5 text-xs sm:text-sm text-cream-400 leading-relaxed">
                     {dish.description}
                   </p>
 
@@ -82,9 +87,9 @@ export default function Signatures() {
                     href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(dish.orderMsg)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 bg-ember-800/50 hover:bg-ember-600 border border-ember-700/50 text-cream-100 hover:text-white text-xs font-bold uppercase tracking-wider py-2.5 px-3 rounded-xl transition-all duration-300"
+                    className="w-full flex items-center justify-center gap-2 bg-ember-800/50 hover:bg-ember-600 border border-ember-700/50 text-cream-100 hover:text-white text-xs font-bold uppercase tracking-wider py-3 px-4 rounded-xl transition-all duration-300 shadow"
                   >
-                    <MessageCircle className="w-3.5 h-3.5" />
+                    <MessageCircle className="w-4 h-4 text-emerald-400" />
                     <span>Pedir por WhatsApp</span>
                   </a>
                 </div>
