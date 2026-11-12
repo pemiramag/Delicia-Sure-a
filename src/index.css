@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #120905;
+    color: #FDF6EE;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #120905;
+}
+::-webkit-scrollbar-thumb {
+  background: #271A12;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D96B1E;
+}
+
+/* Subtle glow animations */
+@keyframes flame-pulse {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(1.05);
+  }
+}
+
+.flame-glow {
+  animation: flame-pulse 6s infinite ease-in-out;
+}

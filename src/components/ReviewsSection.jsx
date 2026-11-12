@@ -1,0 +1,74 @@
+import React from 'react';
+import { Star, MessageSquareQuote, CheckCircle } from 'lucide-react';
+import { REVIEWS } from '../data/menuData';
+
+export default function ReviewsSection() {
+  return (
+    <section id="opiniones" className="py-20 lg:py-28 bg-ember-950 relative border-t border-ember-900/60 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <div className="flex items-center gap-2 text-gold-500 text-xs font-bold uppercase tracking-widest mb-2">
+              <Star className="w-4 h-4 fill-gold-500" />
+              <span>Confianza & Testimonios</span>
+            </div>
+            <h2 className="font-serif text-3xl sm:text-5xl font-bold text-cream-100 tracking-tight">
+              Una región que siempre vuelve.
+            </h2>
+          </div>
+
+          <div className="flex items-center gap-3 bg-ember-900/40 border border-ember-800/60 px-5 py-3 rounded-2xl">
+            <span className="font-serif text-3xl font-bold text-gold-400">4.9</span>
+            <div>
+              <div className="flex text-gold-500">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-gold-500" />
+                ))}
+              </div>
+              <p className="text-xs text-cream-400 mt-0.5">Basado en Google & Clientes Locales</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Reviews Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {REVIEWS.map((review, idx) => (
+            <div
+              key={idx}
+              className="bg-ember-900/30 rounded-2xl border border-ember-800/40 p-6 flex flex-col justify-between hover:border-ember-700/60 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex text-gold-500">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-gold-500" />
+                    ))}
+                  </div>
+                  <span className="text-[11px] text-cream-400">{review.date}</span>
+                </div>
+
+                <p className="font-serif italic text-cream-200 text-sm sm:text-base leading-relaxed">
+                  "{review.text}"
+                </p>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-ember-800/40 flex items-center justify-between">
+                <div>
+                  <h4 className="font-bold text-sm text-cream-100">{review.name}</h4>
+                  <p className="text-xs text-cream-400">{review.location}</p>
+                </div>
+                <div className="flex items-center gap-1 text-[11px] text-emerald-400 font-medium">
+                  <CheckCircle className="w-3.5 h-3.5" />
+                  <span>Verificado</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
