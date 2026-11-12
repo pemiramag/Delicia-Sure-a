@@ -2,6 +2,7 @@ import React from 'react';
 import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Ticker from './components/Ticker';
 import Signatures from './components/Signatures';
 import MenuChapters from './components/MenuChapters';
 import CraftStory from './components/CraftStory';
@@ -19,6 +20,7 @@ export default function App() {
       <Navbar />
       <main className="flex-grow">
         <Hero />
+        <Ticker />
         <Signatures />
         <MenuChapters />
         <CraftStory />

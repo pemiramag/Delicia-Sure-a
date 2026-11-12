@@ -1,6 +1,9 @@
 import React from 'react';
-import { Flame, Heart, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Flame, CheckCircle2, ArrowRight } from 'lucide-react';
 import { WHATSAPP_NUMBER } from '../data/menuData';
+
+const framerEase = [0.22, 1, 0.36, 1];
 
 export default function CraftStory() {
   return (
@@ -13,12 +16,18 @@ export default function CraftStory() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Visual Story Card */}
-          <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden border border-ember-800/60 shadow-2xl bg-ember-900/40">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.8, ease: framerEase }}
+            className="relative"
+          >
+            <div className="group relative rounded-3xl overflow-hidden border border-ember-800/60 shadow-2xl bg-ember-900/40">
               <img 
                 src="/foto_local.jpg" 
                 alt="Instalaciones y calidez de Delicia Sureña" 
-                className="w-full h-[450px] object-cover"
+                className="w-full h-[450px] object-cover group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ember-950 via-ember-950/40 to-transparent"></div>
@@ -34,15 +43,25 @@ export default function CraftStory() {
               </div>
             </div>
 
-            {/* Floating badge */}
-            <div className="absolute -top-4 -right-4 bg-gradient-to-br from-amber-500 to-ember-600 text-ember-950 p-4 rounded-2xl shadow-glow font-bold text-center">
+            {/* Floating badge with subtle breathing animation */}
+            <motion.div 
+              animate={{ y: [0, -6, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+              className="absolute -top-4 -right-4 bg-gradient-to-br from-amber-500 to-ember-600 text-ember-950 p-4 rounded-2xl shadow-glow font-bold text-center"
+            >
               <span className="block text-2xl font-serif">100%</span>
               <span className="text-[10px] uppercase tracking-wider">Tradición Nariñense</span>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Column: Story & Philosophy */}
-          <div className="space-y-6">
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.8, ease: framerEase }}
+            className="space-y-6"
+          >
             <div className="flex items-center gap-2 text-ember-400 text-xs font-bold uppercase tracking-widest">
               <Flame className="w-4 h-4 fill-ember-500" />
               <span>Nuestra Historia & El Fogón</span>
@@ -59,7 +78,7 @@ export default function CraftStory() {
               Aquí no hay atajos: los cuyes se marinan desde la víspera con hierbas campesinas, las papas pastusas se cuecen en su punto exacto y nuestro famoso ají de maní se elabora artesanalmente a diario. Cada comensal que entra por nuestra puerta es recibido como parte de nuestra propia familia.
             </p>
 
-            {/* 4 Feature Points */}
+            {/* 4 Feature Points with staggered entrance */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-ember-500 shrink-0 mt-0.5" />
@@ -96,18 +115,19 @@ export default function CraftStory() {
 
             {/* Button */}
             <div className="pt-4">
-              <a
+              <motion.a
                 href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hola%2C%20quisiera%20conocer%20m%C3%A1s%20sobre%20Delicia%20Sure%C3%B1a`}
                 target="_blank"
                 rel="noopener noreferrer"
+                whileHover={{ x: 4 }}
                 className="inline-flex items-center gap-2 text-sm font-bold text-amber-500 hover:text-amber-400 transition-colors group"
               >
                 <span>Hablemos por WhatsApp</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
+              </motion.a>
             </div>
 
-          </div>
+          </motion.div>
 
         </div>
       </div>

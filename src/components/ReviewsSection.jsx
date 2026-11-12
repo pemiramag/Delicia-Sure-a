@@ -1,14 +1,26 @@
 import React from 'react';
-import { Star, MessageSquareQuote, CheckCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Star, CheckCircle } from 'lucide-react';
 import { REVIEWS } from '../data/menuData';
+
+const framerEase = [0.22, 1, 0.36, 1];
 
 export default function ReviewsSection() {
   return (
     <section id="opiniones" className="py-20 lg:py-28 bg-ember-950 relative border-t border-ember-900/60 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Background ambient glow */}
+      <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-gold-500/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, ease: framerEase }}
+          className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6"
+        >
           <div>
             <div className="flex items-center gap-2 text-gold-500 text-xs font-bold uppercase tracking-widest mb-2">
               <Star className="w-4 h-4 fill-gold-500" />
@@ -19,7 +31,7 @@ export default function ReviewsSection() {
             </h2>
           </div>
 
-          <div className="flex items-center gap-3 bg-ember-900/40 border border-ember-800/60 px-5 py-3 rounded-2xl">
+          <div className="flex items-center gap-3 bg-ember-900/40 border border-ember-800/60 px-5 py-3 rounded-2xl backdrop-blur-sm shadow-md">
             <span className="font-serif text-3xl font-bold text-gold-400">4.9</span>
             <div>
               <div className="flex text-gold-500">
@@ -27,17 +39,22 @@ export default function ReviewsSection() {
                   <Star key={i} className="w-4 h-4 fill-gold-500" />
                 ))}
               </div>
-              <p className="text-xs text-cream-400 mt-0.5">Basado en Google & Clientes Locales</p>
+              <p className="text-xs text-cream-400 mt-0.5 font-medium">Basado en Google & Clientes Locales</p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Reviews Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {REVIEWS.map((review, idx) => (
-            <div
+            <motion.div
               key={idx}
-              className="bg-ember-900/30 rounded-2xl border border-ember-800/40 p-6 flex flex-col justify-between hover:border-ember-700/60 transition-all duration-300 hover:-translate-y-1"
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.6, delay: idx * 0.1, ease: framerEase }}
+              whileHover={{ y: -6, transition: { duration: 0.25 } }}
+              className="bg-ember-900/30 rounded-3xl border border-ember-800/40 p-6 flex flex-col justify-between hover:border-ember-700/70 transition-colors duration-300 shadow-lg hover:shadow-glow"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -64,7 +81,7 @@ export default function ReviewsSection() {
                   <span>Verificado</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
