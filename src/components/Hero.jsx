@@ -174,6 +174,23 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
+        {/* Scroll hint indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.9, duration: 0.6 }}
+          className="hidden lg:flex flex-col items-center gap-1.5 pt-10 text-cream-400/80 text-[10px] tracking-[0.25em] uppercase font-bold"
+        >
+          <span>Deslizar</span>
+          <motion.div
+            animate={{ y: [0, 5, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+            className="text-amber-500 text-xs"
+          >
+            ↓
+          </motion.div>
+        </motion.div>
+
       </div>
     </section>
   );
