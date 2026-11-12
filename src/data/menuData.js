@@ -71,75 +71,131 @@ export const SIGNATURE_DISHES = [
 ];
 
 export const GALLERY_PHOTOS = [
+  // --- PLATOS TÍPICOS ---
   {
     id: 1,
     title: "Cuy Asado Tradicional en Catambuco",
     category: "platos",
     src: "/foto_cuy.jpg",
-    desc: "Crocante a la brasa con papas pastusas, crispetas y ají de maní."
+    desc: "Crocante a la brasa con papas pastusas al vapor, crispetas y ají de maní casero."
   },
   {
     id: 2,
-    title: "Costilla Casera al Fogón",
+    title: "Frito Pastuso Tradicional",
     category: "platos",
-    src: "/gallery/delicia_surena_61.jpg",
-    desc: "Glaseado artesanal con arroz, frijoles y ensalada fresca."
+    src: "/gallery/delicia_surena_03.jpg",
+    desc: "Trozos dorados de cerdo con papas al vapor, arroz, crispetas y ají de maní."
   },
   {
     id: 3,
-    title: "Trucha Fresca Frita con Cazuela de Barro",
+    title: "Trucha Fresca Frita con Cazuela",
     category: "platos",
-    src: "/gallery/delicia_surena_28.jpg",
-    desc: "Pescado fresco frito al limón con guarnición andina y sopa tradicional."
+    src: "/gallery/delicia_surena_65.jpg",
+    desc: "Pescado fresco frito al limón andino con guarnición andina y sopa tradicional en barro."
   },
   {
     id: 4,
-    title: "Gallina Criolla Campesina con Aguacate",
+    title: "Costilla Casera al Fogón de Leña",
     category: "platos",
-    src: "/gallery/delicia_surena_17.jpg",
-    desc: "Cocción lenta con hogao de la huerta, arroz y ensalada."
+    src: "/gallery/delicia_surena_61.jpg",
+    desc: "Costilla de cerdo dorada a la brasa con arroz blanco, frijoles y ensalada fresca."
   },
   {
     id: 5,
-    title: "Cazuelas de Barro con Locro Tradicional",
-    category: "sopas",
-    src: "/gallery/delicia_surena_12.jpg",
-    desc: "Tres cazuelas humeantes servidas en canastillas de mimbre tejidas a mano."
+    title: "Plato Mixto: Cuy y Frito Pastuso",
+    category: "platos",
+    src: "/gallery/delicia_surena_45.jpg",
+    desc: "La mejor combinación para compartir los dos sabores más representativos de Nariño."
   },
+
+  // --- SOPAS Y CAZUELAS ---
   {
     id: 6,
-    title: "Frito Pastuso con Crispetas y Papas",
-    category: "platos",
-    src: "/gallery/delicia_surena_03.jpg",
-    desc: "La tradicional combinación nariñense con cazuela y papas cocidas."
+    title: "Trío de Cazuelas de Barro Humeantes",
+    category: "sopas",
+    src: "/gallery/delicia_surena_37.jpg",
+    desc: "Tres cazuelas tradicionales servidas en canastillas de mimbre tejidas a mano."
   },
   {
     id: 7,
-    title: "Churrasco de Pollo con Papa Pastusa",
-    category: "platos",
-    src: "/gallery/delicia_surena_20.jpg",
-    desc: "Corte jugoso a la brasa con papa pastusa al vapor y ají casero."
+    title: "Locro Nariñense Tradicional",
+    category: "sopas",
+    src: "/gallery/delicia_surena_09.jpg",
+    desc: "Sopa caliente espesa preparada a fuego lento con hierbas campesinas y papa pastusa."
   },
   {
     id: 8,
-    title: "Comedor Campestre & Calidez Familiar",
-    category: "ambiente",
-    src: "/gallery/delicia_surena_26.jpg",
-    desc: "Espacio acogedor y tranquilo decorado con plantas en Catambuco."
+    title: "Cazuela de la Casa en Vajilla de Barro",
+    category: "sopas",
+    src: "/gallery/delicia_surena_02.jpg",
+    desc: "Cazuela humeante que conserva todo el sabor y el calor del fogón tradicional."
   },
   {
     id: 9,
-    title: "Sopas de la Abuela en Cazuela",
+    title: "Sopa Campesina de la Abuela",
     category: "sopas",
     src: "/gallery/delicia_surena_24.jpg",
-    desc: "Locro, cebada y arrancadas cocinadas a fuego lento."
+    desc: "Receta casera de verduras de la huerta, papa andina y sazón de hogar."
   },
+
+  // --- ALMUERZOS CASEROS ---
   {
     id: 10,
-    title: "Fachada & Zona de Atención",
-    category: "ambiente",
-    src: "/foto_local.jpg",
-    desc: "Atención cálida donde cada cliente se siente como en su propia casa."
+    title: "Almuerzo Ejecutivo: Pollo a la Plancha",
+    category: "almuerzos",
+    src: "/gallery/delicia_surena_05.jpg",
+    desc: "Pechuga tierna con arroz blanco, papas pastusas al vapor, ensalada fresca y ají."
+  },
+  {
+    id: 11,
+    title: "Filete a la Plancha con Pasta y Remolacha",
+    category: "almuerzos",
+    src: "/gallery/delicia_surena_68.jpg",
+    desc: "Almuerzo diario balanceado y abundante servido con pasta casera y remolacha."
+  },
+  {
+    id: 12,
+    title: "Churrasco con Papa Pastusa y Ají",
+    category: "almuerzos",
+    src: "/gallery/delicia_surena_56.jpg",
+    desc: "Corte dorado a la plancha con papa cocida al vapor y ensalada de mango y verduras."
+  },
+  {
+    id: 13,
+    title: "Gallina Criolla en Hogao con Aguacate",
+    category: "almuerzos",
+    src: "/gallery/delicia_surena_40.jpg",
+    desc: "Presa tierna en generoso hogao de tomate y cebolla con arroz y medio aguacate."
+  },
+
+  // --- BEBIDAS Y ANTOJOS ---
+  {
+    id: 14,
+    title: "Jugo Natural & Limonada Casera",
+    category: "bebidas",
+    src: "/gallery/delicia_surena_23.jpg",
+    desc: "Bebidas refrescantes de fruta natural preparadas al instante para acompañar tu almuerzo."
+  },
+  {
+    id: 15,
+    title: "Trucha Dorada con Patacones Crocantes",
+    category: "bebidas",
+    src: "/gallery/delicia_surena_27.jpg",
+    desc: "Servida con patacones crocantes dorados, limón andino y ensalada de la casa."
+  },
+  {
+    id: 16,
+    title: "Cosecha Fresca de la Huerta Nariñense",
+    category: "bebidas",
+    src: "/gallery/delicia_surena_43.jpg",
+    desc: "Habas tiernas, arvejas y hortalizas frescas traídas del campo para sazonar cada comida."
+  },
+  {
+    id: 17,
+    title: "Calidez en la Barra & Antojos",
+    category: "bebidas",
+    src: "/gallery/delicia_surena_51.jpg",
+    desc: "Atención cálida familiar, café nariñense caliente y antojitos típicos de la región."
   }
 ];
 

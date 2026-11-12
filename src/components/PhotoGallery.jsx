@@ -6,12 +6,10 @@ import { GALLERY_PHOTOS, WHATSAPP_NUMBER } from '../data/menuData';
 const framerEase = [0.22, 1, 0.36, 1];
 
 export default function PhotoGallery() {
-  const [filter, setFilter] = useState('todos');
+  const [filter, setFilter] = useState('platos');
   const [selectedPhoto, setSelectedPhoto] = useState(null);
 
-  const filteredPhotos = filter === 'todos' 
-    ? GALLERY_PHOTOS 
-    : GALLERY_PHOTOS.filter(p => p.category === filter);
+  const filteredPhotos = GALLERY_PHOTOS.filter(p => p.category === filter);
 
   return (
     <section id="galeria" className="py-20 lg:py-28 bg-ember-950 relative border-t border-ember-900/60 overflow-hidden">
@@ -42,13 +40,13 @@ export default function PhotoGallery() {
             </p>
           </div>
 
-          {/* Filter Pills */}
+          {/* Filter Pills without 'Todos' */}
           <div className="flex flex-wrap gap-2">
             {[
-              { id: 'todos', label: 'Todos' },
               { id: 'platos', label: 'Platos Típicos' },
-              { id: 'sopas', label: 'Sopas & Cazuelas' },
-              { id: 'ambiente', label: 'El Restaurante' },
+              { id: 'sopas', label: 'Sopas y Cazuelas' },
+              { id: 'almuerzos', label: 'Almuerzos Caseros' },
+              { id: 'bebidas', label: 'Bebidas y Antojos' },
             ].map((btn) => (
               <motion.button
                 key={btn.id}
