@@ -4,12 +4,24 @@ import { WHATSAPP_NUMBER, WHATSAPP_DEFAULT_MSG } from '../data/menuData';
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32">
-      {/* Background radial glow effect */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-ember-600/15 rounded-full blur-[140px] pointer-events-none flame-glow"></div>
-      <div className="absolute top-1/2 right-10 w-[400px] h-[400px] bg-gold-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <section className="relative overflow-hidden pt-14 pb-20 lg:pt-24 lg:pb-32 min-h-[85vh] flex items-center">
+      {/* Facilities background image with dark ember overlays */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <img
+          src="/foto_local.jpg"
+          alt="Instalaciones del Restaurante Delicia Sureña en Catambuco"
+          className="w-full h-full object-cover object-[center_35%] filter brightness-[0.28] contrast-110 saturate-[1.15] scale-105"
+        />
+        {/* Vertical gradient: smooth fade to top and solid ember-950 bottom */}
+        <div className="absolute inset-0 bg-gradient-to-t from-ember-950 via-ember-950/85 to-ember-950/60" />
+        {/* Horizontal gradient: ensures headline & CTAs have pristine contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-ember-950/95 via-ember-950/80 to-transparent" />
+        {/* Warm flame glows */}
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-ember-600/20 rounded-full blur-[140px] pointer-events-none flame-glow"></div>
+        <div className="absolute bottom-1/4 right-10 w-[400px] h-[400px] bg-gold-500/15 rounded-full blur-[130px] pointer-events-none"></div>
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         
         {/* Sub-badge */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-ember-900/60 border border-ember-700/50 text-ember-300 text-xs font-semibold tracking-wider uppercase mb-6 backdrop-blur-sm">
