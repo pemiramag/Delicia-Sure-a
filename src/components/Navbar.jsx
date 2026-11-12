@@ -30,9 +30,10 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-8 text-sm font-medium text-cream-300">
+          <div className="hidden lg:flex items-center gap-7 text-sm font-medium text-cream-300">
             <a href="#especialidades" className="hover:text-ember-400 transition-colors">Especialidades</a>
             <a href="#menu" className="hover:text-ember-400 transition-colors">La Carta</a>
+            <a href="#galeria" className="hover:text-ember-400 transition-colors">Galería</a>
             <a href="#fogon" className="hover:text-ember-400 transition-colors">El Fogón</a>
             <a href="#ubicacion" className="hover:text-ember-400 transition-colors">Catambuco</a>
             <a href="#opiniones" className="hover:text-ember-400 transition-colors">Opiniones</a>
@@ -82,6 +83,13 @@ export default function Navbar() {
             className="block py-2 text-base font-medium text-cream-200 hover:text-ember-400 border-b border-ember-900/40"
           >
             Carta Completa
+          </a>
+          <a
+            href="#galeria"
+            onClick={() => setIsOpen(false)}
+            className="block py-2 text-base font-medium text-cream-200 hover:text-ember-400 border-b border-ember-900/40"
+          >
+            Galería Fotográfica Real
           </a>
           <a
             href="#fogon"

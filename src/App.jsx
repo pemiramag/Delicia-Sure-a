@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Signatures from './components/Signatures';
 import MenuChapters from './components/MenuChapters';
 import CraftStory from './components/CraftStory';
+import PhotoGallery from './components/PhotoGallery';
 import LocationCard from './components/LocationCard';
 import ReviewsSection from './components/ReviewsSection';
 import CateringSection from './components/CateringSection';
@@ -21,6 +22,7 @@ export default function App() {
         <Signatures />
         <MenuChapters />
         <CraftStory />
+        <PhotoGallery />
         <LocationCard />
         <ReviewsSection />
         <CateringSection />

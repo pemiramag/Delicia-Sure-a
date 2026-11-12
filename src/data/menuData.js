@@ -14,33 +14,106 @@ export const SIGNATURE_DISHES = [
   },
   {
     id: "costillas-carbon",
-    title: "Costillas Ahumadas al Fogón",
+    title: "Costilla Ahumada al Fogón",
     badge: "Bestseller",
     price: "$38.000",
-    description: "Tiernas costillas de cerdo campesino glaseadas con aliño tradicional de la casa y doradas a la brasa. Servidas con papa criolla crocante, ensalada fresca y ají criollo.",
-    image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
-    tags: ["Ahumado natural", "Porción abundante"],
-    orderMsg: "Hola Delicia Sureña, quiero pedir unas Costillas Ahumadas al Fogón."
+    description: "Tiernas costillas de cerdo campesino glaseadas con aliño tradicional de la casa y doradas a la brasa. Servidas con arroz blanco, frijoles caseros y ensalada fresca.",
+    image: "/gallery/delicia_surena_61.jpg",
+    tags: ["Ahumado natural", "Porción abundante", "Receta propia"],
+    orderMsg: "Hola Delicia Sureña, quiero pedir una Costilla Ahumada al Fogón."
   },
   {
-    id: "sancocho-gallina",
-    title: "Sancocho de Gallina Criolla",
-    badge: "Tradicional",
-    price: "$28.000",
-    description: "Hervido lentamente en olla de barro al calor de la leña con gallina de campo, plátano verde, yuca suave, mazorca dulce y picadillo de cilantro y cebollita sureña.",
-    image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80",
-    tags: ["Cocinado en leña", "Reconfortante"],
-    orderMsg: "Hola Delicia Sureña, me gustaría ordenar un Sancocho de Gallina Criolla."
-  },
-  {
-    id: "fritada-pastusa",
-    title: "Fritada Nariñense & Empanadas",
-    badge: "Favorito de la Casa",
+    id: "trucha-arcoiris",
+    title: "Trucha Dorada con Cazuela",
+    badge: "Especialidad",
     price: "$32.000",
-    description: "Trozos de cerdo dorados en su propia manteca artesanal con tostado nariñense, papas cocidas, choclo tierno y empanadas de añejo con abundante ají de maní.",
-    image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=800&q=80",
-    tags: ["Crujiente", "Sabor de fiesta"],
-    orderMsg: "Hola Delicia Sureña, me interesa ordenar la Fritada Nariñense con empanadas."
+    description: "Trucha fresca frita al punto dorado crocante con limón andino, arroz blanco, fríjoles campesinos con papa y cazuela de sopa tradicional en barro.",
+    image: "/gallery/delicia_surena_28.jpg",
+    tags: ["Trucha fresca", "Incluye cazuela", "Sazón sureña"],
+    orderMsg: "Hola Delicia Sureña, me gustaría pedir la Trucha Dorada con Cazuela."
+  },
+  {
+    id: "gallina-estofada",
+    title: "Gallina Criolla en Hogao",
+    badge: "Tradicional",
+    price: "$30.000",
+    description: "Presa de gallina de campo cocinada a fuego lento en hogao campesino de tomate y cebolla, servida con arroz blanco, ensalada fresca y medio aguacate.",
+    image: "/gallery/delicia_surena_17.jpg",
+    tags: ["Gallina de campo", "Hogao casero", "Aguacate fresco"],
+    orderMsg: "Hola Delicia Sureña, me interesa ordenar la Gallina Criolla en Hogao."
+  }
+];
+
+export const GALLERY_PHOTOS = [
+  {
+    id: 1,
+    title: "Cuy Asado Tradicional en Catambuco",
+    category: "platos",
+    src: "/foto_cuy.jpg",
+    desc: "Crocante a la brasa con papas pastusas, crispetas y ají de maní."
+  },
+  {
+    id: 2,
+    title: "Costilla de Cerdo Ahumada al Fogón",
+    category: "platos",
+    src: "/gallery/delicia_surena_61.jpg",
+    desc: "Glaseado artesanal con arroz, frijoles y ensalada fresca."
+  },
+  {
+    id: 3,
+    title: "Trucha Dorada con Cazuela de Barro",
+    category: "platos",
+    src: "/gallery/delicia_surena_28.jpg",
+    desc: "Pescado fresco frito al limón con guarnición andina y sopa tradicional."
+  },
+  {
+    id: 4,
+    title: "Gallina Criolla Campesina con Aguacate",
+    category: "platos",
+    src: "/gallery/delicia_surena_17.jpg",
+    desc: "Cocción lenta con hogao de la huerta, arroz y ensalada."
+  },
+  {
+    id: 5,
+    title: "Cazuelas de Barro con Locro Tradicional",
+    category: "sopas",
+    src: "/gallery/delicia_surena_12.jpg",
+    desc: "Tres cazuelas humeantes servidas en canastillas de mimbre tejidas a mano."
+  },
+  {
+    id: 6,
+    title: "Plato Típico Sureño con Crispetas y Papas",
+    category: "platos",
+    src: "/gallery/delicia_surena_03.jpg",
+    desc: "La tradicional combinación nariñense con cazuela y papas cocidas."
+  },
+  {
+    id: 7,
+    title: "Filete Asado a la Brasa con Papa Pastusa",
+    category: "platos",
+    src: "/gallery/delicia_surena_20.jpg",
+    desc: "Corte jugoso a la brasa con papa pastusa al vapor y ají casero."
+  },
+  {
+    id: 8,
+    title: "Comedor Campestre & Calidez Familiar",
+    category: "ambiente",
+    src: "/gallery/delicia_surena_26.jpg",
+    desc: "Espacio acogedor y tranquilo decorado con plantas en Catambuco."
+  },
+  {
+    id: 9,
+    title: "Cazuela Individual de Locro Nariñense",
+    category: "sopas",
+    src: "/gallery/delicia_surena_24.jpg",
+    desc: "Sopa espesa con cilantro fresco y sazón de hogar."
+  },
+  {
+    id: 10,
+    title: "Fachada & Zona de Atención",
+    category: "ambiente",
+    src: "/foto_local.jpg",
+    desc: "Atención cálida donde cada cliente se siente como en su propia casa."
   }
 ];
 
@@ -49,6 +122,7 @@ export const MENU_CHAPTERS = [
     id: "01",
     name: "Brasas & Asados",
     tagline: "El sabor inconfundible del carbón y la leña",
+    image: "/foto_cuy.jpg",
     items: [
       {
         name: "Cuy Asado Entero",
@@ -61,41 +135,42 @@ export const MENU_CHAPTERS = [
         desc: "Ideal para 1 a 2 personas, servido con todas sus guarniciones tradicionales."
       },
       {
-        name: "Churrasco al Carbón (350g)",
-        price: "$34.000",
-        desc: "Corte jugoso a la brasa con papas a la francesa, arepa campesina y ensalada."
+        name: "Costillas Ahumadas al Fogón",
+        price: "$38.000",
+        desc: "Costillas de cerdo campesino glaseadas con aliño de la casa y frijoles."
       },
       {
-        name: "Lomo de Cerdo Asado a la Brasa",
-        price: "$29.000",
-        desc: "Filete marinado con adobo casero nariñense y papas criollas doradas."
+        name: "Filete Asado a la Brasa con Papa Pastusa",
+        price: "$28.000",
+        desc: "Corte a la brasa con papa pastusa al vapor, arroz y ají casero."
       }
     ]
   },
   {
     id: "02",
-    name: "Sopas & Platos Típicos",
-    tagline: "Recetas de abuela cocinadas con paciencia y amor",
+    name: "Sopas & Cazuelas",
+    tagline: "Recetas de abuela cocinadas con paciencia y leña en cazuela de barro",
+    image: "/gallery/delicia_surena_12.jpg",
     items: [
+      {
+        name: "Locro Nariñense en Cazuela de Barro",
+        price: "$16.000",
+        desc: "Sopa tradicional espesada con papa pastusa y hierbas aromáticas de huerta."
+      },
       {
         name: "Sancocho de Gallina Criolla Campesina",
         price: "$28.000",
         desc: "Porción generosa de gallina, arroz, aguacate, plátano y consomé aromático."
       },
       {
-        name: "Fritada Tradicional de Catambuco",
+        name: "Trucha Dorada con Cazuela Tradicional",
         price: "$32.000",
-        desc: "Costilla y pulpa de cerdo, choclo desgranado, tostado y ají de maní."
+        desc: "Trucha frita al limón con arroz, frijoles y cazuela de sopa en barro."
       },
       {
-        name: "Trucha Arcoíris Frita o al Ajillo",
-        price: "$32.000",
-        desc: "Fresca de las lagunas nariñenses, patacón crocante y ensalada verde."
-      },
-      {
-        name: "Caldo de Costilla con Papa Pastusa",
-        price: "$18.000",
-        desc: "Tradicional de las mañanas andinas con cilantro fresco y arepa caliente."
+        name: "Gallina Criolla Estofada en Hogao",
+        price: "$30.000",
+        desc: "Presa tierna en hogao casero con aguacate fresco y arroz blanco."
       }
     ]
   },
@@ -103,6 +178,7 @@ export const MENU_CHAPTERS = [
     id: "03",
     name: "Entradas & Picadas",
     tagline: "Para compartir y saborear cada momento",
+    image: "/gallery/delicia_surena_03.jpg",
     items: [
       {
         name: "Porción de Empanadas de Añejo (6 uds)",
@@ -110,9 +186,9 @@ export const MENU_CHAPTERS = [
         desc: "Masa fermentada de maíz tradicional rellenas de guiso sureño y ají de maní."
       },
       {
-        name: "Picada Delicia Sureña (4 personas)",
-        price: "$65.000",
-        desc: "Chicharrón carnudo, costillitas, longaniza artesanal, papas criollas y empanaditas."
+        name: "Plato Típico Sureño con Crispetas y Papas",
+        price: "$25.000",
+        desc: "Papas al vapor, crispetas frescas, empanadas y ají de maní."
       },
       {
         name: "Porción de Papas al Vapor con Ají de Maní",
@@ -130,6 +206,7 @@ export const MENU_CHAPTERS = [
     id: "04",
     name: "Bebidas & Postres",
     tagline: "El cierre perfecto con la dulzura de nuestra tierra",
+    image: "/gallery/delicia_surena_26.jpg",
     items: [
       {
         name: "Hervido Nariñense Tradicional (Mora / Lulo / Maracuyá)",
