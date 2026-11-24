@@ -1,0 +1,14 @@
+{
+  "managedBy": "webdock-ai",
+  "name": "webdock-build",
+  "version": "0.1.0",
+  "file": "webdock-build.mjs",
+  "sha256": "f108ee4586db7d2d2ccf632ca757a70f9c54a33b3ef1490ce7570f7aa4ad8594",
+  "size": 1397184,
+  "node": ">=24",
+  "bundledWith": {
+    "esbuild": "0.28.2",
+    "parse5": "8.0.1",
+    "zod": "4.6.7"
+  }
+}

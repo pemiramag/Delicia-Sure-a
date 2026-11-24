@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "managedBy": "webdock-ai",
+  "project": {
+    "name": "pemiramag/Delicia-Sure-a"
+  },
+  "branch": "master",
+  "build": {
+    "installCommand": "cd \"Astro\" && npm ci",
+    "command": "cd \"Astro\" && npm run build",
+    "env": []
+  },
+  "output": {
+    "dir": "Astro/dist",
+    "exclude": []
+  },
+  "limits": {
+    "maxFiles": 20000,
+    "maxTotalBytes": 524288000,
+    "maxHtmlBytes": 5242880,
+    "maxTimeMs": 300000,
+    "maxManifestElementsPerPage": 2500
+  },
+  "attestation": false,
+  "tool": {
+    "version": "0.1.0",
+    "sha256": "f108ee4586db7d2d2ccf632ca757a70f9c54a33b3ef1490ce7570f7aa4ad8594"
+  }
+}

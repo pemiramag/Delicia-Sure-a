@@ -1,0 +1,99 @@
+# managed-by: webdock-ai
+# template-version: 1
+#
+# Workflow de WebDock AI. Corre en runners hospedados por GitHub, con permisos
+# de solo lectura, y nunca hace commit ni push. No usa ningún secret de
+# WebDock AI. Las acciones están fijadas por SHA de commit (la etiqueta va
+# como comentario). Para actualizarlas: docs/workflow-cliente.md.
+name: WebDock AI build
+
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch:
+
+# Un build por rama: un push nuevo cancela al anterior (queda superado).
+concurrency:
+  group: webdock-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build y procesamiento
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      # Antes de ejecutar cualquier cosa: el hash de la herramienta debe
+      # coincidir con el registrado en .webdock/config.json.
+      - name: Verificar integridad de la herramienta
+        run: |
+          set -euo pipefail
+          TOOL=.webdock/tools/webdock-build.mjs
+          EXPECTED="$(jq -r '.tool.sha256 // empty' .webdock/config.json)"
+          if [ -z "$EXPECTED" ]; then
+            echo "::error::config.json no declara tool.sha256"
+            exit 1
+          fi
+          echo "$EXPECTED  $TOOL" | sha256sum -c -
+
+      - name: Resolver versión de Node
+        id: nodever
+        run: |
+          set -euo pipefail
+          VERSION="$(jq -r '.node // empty' .webdock/config.json)"
+          FILE=""
+          if [ -z "$VERSION" ]; then
+            if [ -f .nvmrc ]; then FILE=".nvmrc"; else VERSION="lts/*"; fi
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "file=$FILE" >> "$GITHUB_OUTPUT"
+
+      - name: Configurar Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ steps.nodever.outputs.version }}
+          node-version-file: ${{ steps.nodever.outputs.file }}
+
+      - name: Instalar dependencias del cliente
+        run: |
+          set -euo pipefail
+          CMD="$(jq -r '.build.installCommand // empty' .webdock/config.json)"
+          if [ -n "$CMD" ]; then
+            bash -c "$CMD"
+          elif [ -f package-lock.json ]; then
+            npm ci
+          elif [ -f package.json ]; then
+            npm install --no-audit --no-fund
+          else
+            echo "Sin package.json: no hay dependencias que instalar."
+          fi
+
+      - name: Build del cliente
+        run: |
+          set -euo pipefail
+          CMD="$(jq -r '.build.command // empty' .webdock/config.json)"
+          if [ -n "$CMD" ]; then
+            bash -c "$CMD"
+          else
+            echo "Sin comando de build: se procesa la salida existente."
+          fi
+
+      - name: Procesar con webdock-build
+        run: node .webdock/tools/webdock-build.mjs --out webdock-artifact
+
+
+      - name: Subir artefacto
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: webdock-site
+          path: webdock-artifact/
+          retention-days: 3
+          if-no-files-found: error
