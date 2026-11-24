@@ -6,12 +6,12 @@
   },
   "branch": "master",
   "build": {
-    "installCommand": "cd \"Astro\" && npm ci",
-    "command": "cd \"Astro\" && npm run build",
+    "installCommand": "npm ci",
+    "command": "npm run build",
     "env": []
   },
   "output": {
-    "dir": "Astro/dist",
+    "dir": "dist",
     "exclude": []
   },
   "limits": {
